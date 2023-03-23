@@ -8,7 +8,6 @@ const router = express.Router();
 
 // Define a route that responds with a JSON object when a GET request is made to the root path
 router.get("/", (req, res) => {
-  res.send(req.query);
   if (req.query.device === 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGhhbnVzaCIsImlhdCI6MTY3OTQ2OTY3OX0.zbzyyzkiB0M0bUZs_ydjPaGpM2PbPbJ1cqi-PTLiS3c') {
     let data = JSON.stringify({
       "theme": {
@@ -31,13 +30,13 @@ router.get("/", (req, res) => {
     axios.request(config)
       .then((response) => {
         console.log(JSON.stringify(response.data));
-        res.send('received da');
+        res.send(JSON.stringify(response.data));
       })
       .catch((error) => {
         console.log(error);
       });
   }
-  res.send('funcion exectued');
+  // res.send('funcion exectued');
 });
 
 // Use the router to handle requests to the `/.netlify/functions/api` path
