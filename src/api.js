@@ -31,12 +31,13 @@ router.get("/", (req, res) => {
     axios.request(config)
       .then((response) => {
         console.log(JSON.stringify(response.data));
+        res.send('received da');
       })
       .catch((error) => {
         console.log(error);
       });
   }
-  res.send('received da');
+  res.send('funcion exectued');
 });
 
 // Use the router to handle requests to the `/.netlify/functions/api` path
