@@ -8,7 +8,7 @@ const router = express.Router();
 
 // Define a route that responds with a JSON object when a GET request is made to the root path
 router.get("/", (req, res) => {
-  console.log(req.query);
+  res.send(req.query);
   if (req.query.device === 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGhhbnVzaCIsImlhdCI6MTY3OTQ2OTY3OX0.zbzyyzkiB0M0bUZs_ydjPaGpM2PbPbJ1cqi-PTLiS3c') {
     let data = JSON.stringify({
       "theme": {
