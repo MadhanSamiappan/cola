@@ -36,7 +36,7 @@ router.get("/", (req, res) => {
   //       console.log(error);
   //     });
   // }
-  res.send(JSON.stringify({hello:"world"}));
+  res.send("world");
 });
 
 // Use the router to handle requests to the `/.netlify/functions/api` path
